@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  SimpleCounter
-//
-//  Created by 原啓介 on 2016/04/30.
-//  Copyright © 2016年 mycompany. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain

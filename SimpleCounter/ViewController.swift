@@ -1,15 +1,9 @@
-//
-//  ViewController.swift
-//  SimpleCounter
-//
-//  Created by 原啓介 on 2016/04/30.
-//  Copyright © 2016年 mycompany. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var Counter: UILabel!
+    var countNum = 1;
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,6 +14,15 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func PushCountButton(sender: UIButton) {
+        Counter.text = String(countNum)
+       countNum += 1 
+    }
+   
+    @IBAction func PushResetButton(sender: UIButton) {
+        countNum = 0
+        Counter.text = String(countNum)
+        countNum += 1
+    }
 }
 

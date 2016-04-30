@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SimpleCounter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,73 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6k-k5-GI4">
+                                <rect key="frame" x="219" y="111" width="162" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="162" id="sZE-ve-VqD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2E9-tk-da9">
+                                <rect key="frame" x="222" y="237" width="156" height="126"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="156" id="7Fl-e5-tw1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <state key="normal" title="Count">
+                                    <color key="titleShadowColor" red="0.0" green="0.29337603670833001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="PushCountButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UN0-5Z-YrL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZe-gh-LgZ">
+                                <rect key="frame" x="234" y="382" width="133" height="113"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="133" id="L89-IQ-0K2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="PushResetButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GKn-oc-Wfg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Counter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Um-Pu-1ng">
+                                <rect key="frame" x="237" y="89" width="126" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="126" id="FqT-74-ZpY"/>
+                                    <constraint firstAttribute="height" constant="53" id="jz2-Fw-HPu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xZe-gh-LgZ" secondAttribute="bottom" constant="105" id="5dy-EV-vI7"/>
+                            <constraint firstItem="2E9-tk-da9" firstAttribute="centerX" secondItem="xZe-gh-LgZ" secondAttribute="centerX" id="Aa7-Jb-mKZ"/>
+                            <constraint firstItem="xZe-gh-LgZ" firstAttribute="top" secondItem="2E9-tk-da9" secondAttribute="bottom" constant="19" id="EOS-4m-A5G"/>
+                            <constraint firstItem="1Um-Pu-1ng" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="69" id="F2p-ki-zrS"/>
+                            <constraint firstItem="1Um-Pu-1ng" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IVT-Xs-Cf2"/>
+                            <constraint firstItem="S6k-k5-GI4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="91" id="Lx8-Vn-24w"/>
+                            <constraint firstItem="2E9-tk-da9" firstAttribute="top" secondItem="S6k-k5-GI4" secondAttribute="bottom" constant="28" id="Rkf-0y-uen"/>
+                            <constraint firstItem="2E9-tk-da9" firstAttribute="top" secondItem="1Um-Pu-1ng" secondAttribute="bottom" constant="95" id="YXi-PU-hWc"/>
+                            <constraint firstItem="1Um-Pu-1ng" firstAttribute="centerX" secondItem="S6k-k5-GI4" secondAttribute="centerX" id="chi-In-c6T"/>
+                            <constraint firstItem="S6k-k5-GI4" firstAttribute="centerX" secondItem="2E9-tk-da9" secondAttribute="centerX" id="l1p-L4-XxO"/>
+                            <constraint firstItem="2E9-tk-da9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zMg-f8-LzG"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Counter" destination="S6k-k5-GI4" id="pzq-vR-kmd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="320"/>
         </scene>
     </scenes>
 </document>
